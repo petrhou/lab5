@@ -8,10 +8,15 @@ int main() {
         sum += arr[i];
     }
     
-    // Округление без math.h
-    double average = sum / 10;
-    average = (int)(average * 100 + 0.5) / 100.0;
-    printf("%.2f\n", average);
     
+    double average = sum / 10;
+    long long value = (long long)(average * 1000 + 0.5);  
+    
+    
+    int last_digit = value % 10;
+    value /= 10;
+    if (last_digit >= 5) value++;
+    
+    printf("%lld.%02lld\n", value / 100, value % 100);
     return 0;
 }
