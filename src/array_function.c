@@ -10,24 +10,6 @@ void join_int_arrays(int *src1, size_t size_src1, int *src2, size_t size_src2, i
 }
 
 void join_and_sort_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2, int* dest) {
-    if (size_src1 == 0 && size_src2 == 0) {
-        return;
-    }
-
-    if (size_src1 == 0) {
-        for (size_t i = 0; i < size_src2; i++) {
-            dest[i] = src2[i];
-        }
-        return;
-    }
-
-    if (size_src2 == 0) {
-        for(size_t i = 0; i < size_src1; i++) {
-            dest[i] = src1[i];
-        }
-        return;
-    }
-
     size_t i = 0, j = 0, k = 0;
 
     while (i < size_src1 && j < size_src2) {
@@ -42,7 +24,7 @@ void join_and_sort_int_arrays(int* src1, size_t size_src1, int* src2, size_t siz
         dest[k++] = src1[i++];
     }
 
-    while (i < size_src2) {
+    while (j < size_src2) {
         dest[k++] = src2[j++];
     }
 }
