@@ -99,7 +99,7 @@ int* merge(int* intervals, int intervalsSize, int* returnSize) {
     for (int i = 1; i < intervalsSize; i++) {
         int start = sorted[i * 2];
         int end = sorted[i * 2 + 1];
-        int final_end = result[(count + 1) * 2 + 1];
+        int final_end = result[(count - 1) * 2 + 1];
 
         if (start <= final_end) {
             if (end > final_end) {
